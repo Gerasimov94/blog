@@ -6,7 +6,7 @@ module.exports = {
     title: `Open AI blog`,
     author: {
       name: `Gerasimov Aleksei`,
-      summary: `who lives at Rostov-an-Don and really loves frontend. 💫`,
+      summary: `who lives at Rostov-on-Don and really loves frontend. 💫`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
