@@ -8,7 +8,7 @@ module.exports = {
       name: `Gerasimov Aleksei`,
       summary: `who lives at Rostov-on-Don and really loves frontend. 💫`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `All content has been written using GPT 3.5 turbo + Dalle-3`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
       twitter: `popping_lewka`,

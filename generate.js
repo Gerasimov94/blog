@@ -4,7 +4,6 @@ const prompts = require('./src/app/prompts/index.js');
 const { appendFileSync, existsSync, mkdirSync, writeFileSync } = require('fs');
 const path = require('path');
 const slugify = require('slugify');
-const { fileURLToPath } = require('url');
 
 const { getArticleContentPrompt, getArticleDescription, getOpenAiImage } = prompts;
 
@@ -59,7 +58,9 @@ async function main() {
     mkdirSync(blogFolder);
   }
 
-  for (const elem of articlesCore.slice(0, 4)) {
+  for (const elem of articlesCore.slice(4, 5)) {
+    console.log('Starting...');
+
     try {
       let chatCompletion = '';
 
@@ -79,8 +80,15 @@ async function main() {
         }
       }
 
+      console.log('All chunks received, generating image...');
+
       const imageBuffer = await generateImage(elem);
+
+      console.log('Done, generating description...');
+
       const description = await generateDescription(elem);
+
+      console.log('Preparing article...');
 
       const slug = slugify(elem.title, {
         replacement: '-',
@@ -105,6 +113,8 @@ ${chatCompletion}
 `);
 
       writeFileSync(path.join(articleFolder, 'image.png'), imageBuffer);
+
+      console.log('Done.');
     } catch (error) {
       console.error(error);
     }
