@@ -58,7 +58,7 @@ async function main() {
     mkdirSync(blogFolder);
   }
 
-  for (const elem of articlesCore.slice(4, 5)) {
+  for (const elem of articlesCore.slice(5, 6)) {
     console.log('Starting...');
 
     try {
